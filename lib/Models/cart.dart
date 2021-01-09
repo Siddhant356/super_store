@@ -12,7 +12,6 @@ class Cart extends ChangeNotifier {
     _init();
   }
   _init() async {
-    _products = await getCart() ?? [];
     print(_products);
   }
   List get cartItems{
@@ -23,7 +22,6 @@ class Cart extends ChangeNotifier {
   void add(Sample item){
     _products.add(item);
     _totalPrice += item.price;
-    setCart(_products);
     notifyListeners();
   }
 

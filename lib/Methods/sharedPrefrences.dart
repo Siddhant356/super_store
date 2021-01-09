@@ -14,16 +14,6 @@ getToken() async {
   return token;
 }
 
-setCart(List cartItems) async{
-  SharedPreferences preferences = await SharedPreferences.getInstance();
-  preferences.setStringList('cart-items',cartItems);
-}
-
-getCart() async {
-  SharedPreferences preferences = await SharedPreferences.getInstance();
-  List cartItems = preferences.getStringList('cart-item');
-  return cartItems;
-}
 
 logOut() async{
   SharedPreferences preferences = await SharedPreferences.getInstance();

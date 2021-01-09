@@ -78,32 +78,35 @@ class _CartViewState extends State<CartView> {
                       ],
                     ),
                     Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.end,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        RawMaterialButton(
-                          onPressed: () {},
-                          elevation: 2.0,
-                          fillColor: Colors.white,
-                          child: Icon(
-                            Icons.remove,
-                            size: 20.0,
-                          ),
-                          padding: EdgeInsets.all(5.0),
-                          shape: CircleBorder(),
-                        ),
-                        Text("1", style: TextStyle(color: textColor1, fontSize: 16, fontWeight: FontWeight.bold),),
-                        RawMaterialButton(
-                          onPressed: () {},
-                          elevation: 2.0,
-                          fillColor: secondaryColor,
-                          child: Icon(
-                            Icons.add,
-                            size: 20.0,
-                          ),
-                          padding: EdgeInsets.all(5.0),
-                          shape: CircleBorder(),
-                        )
+                        IconButton(icon: Icon(Icons.delete, color: textColor1,), onPressed: (){
+                          ccart.remove(itemList[i]);
+                        })
+                        // RawMaterialButton(
+                        //   onPressed: () {},
+                        //   elevation: 2.0,
+                        //   fillColor: Colors.white,
+                        //   child: Icon(
+                        //     Icons.remove,
+                        //     size: 20.0,
+                        //   ),
+                        //   padding: EdgeInsets.all(5.0),
+                        //   shape: CircleBorder(),
+                        // ),
+                        // Text("1", style: TextStyle(color: textColor1, fontSize: 16, fontWeight: FontWeight.bold),),
+                        // RawMaterialButton(
+                        //   onPressed: () {},
+                        //   elevation: 2.0,
+                        //   fillColor: secondaryColor,
+                        //   child: Icon(
+                        //     Icons.add,
+                        //     size: 20.0,
+                        //   ),
+                        //   padding: EdgeInsets.all(5.0),
+                        //   shape: CircleBorder(),
+                        // )
                       ],
                     )
                   ],

@@ -69,12 +69,6 @@ Widget gridViewHome(context, List<Sample> data){
                             ccart.add(data[i]);
                             Scaffold.of(context).showSnackBar(SnackBar(
                               content: Text("Added to the cart"),
-                              action: SnackBarAction(
-                                label: 'Undo',
-                                onPressed: () {
-                                  ccart.remove(data[i]);
-                                },
-                              ),
                             ));
                           },
                           child:Text("Add", style: TextStyle(color: secondaryColor),),
