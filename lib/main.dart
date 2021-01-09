@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (context)=>Cart(),
+      create: (context) => Cart(),
       child: MaterialApp(
         title: 'Flutter Demo',
         home: Splashscreen(),
@@ -21,4 +21,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-

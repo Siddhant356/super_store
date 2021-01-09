@@ -169,7 +169,7 @@ class _SignUpState extends State<SignUp> {
                                 hintText: 'Password',
                               )),
                           Builder(
-                            builder:(context)=> Container(
+                            builder: (context) => Container(
                               margin: EdgeInsets.symmetric(vertical: 30),
                               height: 50,
                               child: RaisedButton.icon(
@@ -195,9 +195,11 @@ class _SignUpState extends State<SignUp> {
                             ),
                           ),
                           FlatButton(
-                            onPressed: (){
+                            onPressed: () {
                               Navigator.push(
-                                  context, MaterialPageRoute(builder: (context) => LoginScreen()));
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => LoginScreen()));
                             },
                             child: Text("Already have account? Login"),
                             textColor: secondaryColor,
@@ -206,7 +208,6 @@ class _SignUpState extends State<SignUp> {
                       ),
                     ),
                   ),
-
                 ],
               ),
             ),

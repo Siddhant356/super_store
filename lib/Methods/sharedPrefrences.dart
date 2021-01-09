@@ -2,8 +2,7 @@ import 'dart:convert';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
-
-setToken(String value) async{
+setToken(String value) async {
   SharedPreferences preferences = await SharedPreferences.getInstance();
   preferences.setString('token', value);
 }
@@ -14,8 +13,7 @@ getToken() async {
   return token;
 }
 
-
-logOut() async{
+logOut() async {
   SharedPreferences preferences = await SharedPreferences.getInstance();
   dynamic result;
   try {

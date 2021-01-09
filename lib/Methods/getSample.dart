@@ -9,7 +9,9 @@ class Network {
 
   Network(this.url);
   Future<List<Sample>> loadResults() async {
-    final response = await get(Uri.encodeFull(url),);
+    final response = await get(
+      Uri.encodeFull(url),
+    );
     if (response.statusCode == 200) {
       sampleProduct = loadSample(response.body);
       print(sampleProduct.length);
@@ -18,10 +20,9 @@ class Network {
       print("Failed to get Post -> ${response.body.toString()}");
     }
   }
+
   static List<Sample> loadSample(String jsonString) {
     final parsed = json.decode(jsonString).cast<Map<String, dynamic>>();
     return parsed.map<Sample>((json) => Sample.fromJson(json)).toList();
   }
 }
-
-

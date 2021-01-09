@@ -3,53 +3,54 @@ import 'package:super_store/Methods/sharedPrefrences.dart';
 import 'package:super_store/Utils/util.dart';
 import 'package:super_store/View/splashscreen.dart';
 
-Widget appDrawer(Future userDetail, BuildContext context){
+Widget appDrawer(Future userDetail, BuildContext context) {
   return Drawer(
     child: ListView(
       children: [
         FutureBuilder(
-      future: userDetail,
-      builder: (context, AsyncSnapshot snapshot){
-        if(snapshot.hasData) {
-          return DrawerHeader(
-            decoration: BoxDecoration(
-              color: backgroundColor,
-            ),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  width: 80.0,
-                  height: 80.0,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: NetworkImage(coverImage),
-                      fit: BoxFit.cover,
-                    ),
-                    borderRadius: BorderRadius.all(Radius.circular(50.0)),
-                    border: Border.all(
-                      color: primaryColor,
-                      width: 4.0,
-                    ),
-                  ),
+          future: userDetail,
+          builder: (context, AsyncSnapshot snapshot) {
+            if (snapshot.hasData) {
+              return DrawerHeader(
+                decoration: BoxDecoration(
+                  color: backgroundColor,
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 8),
-                  child: Text(
-                    "${snapshot.data['msg']}",
-                    style: TextStyle(fontSize: 16),
-                  ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      width: 80.0,
+                      height: 80.0,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: NetworkImage(coverImage),
+                          fit: BoxFit.cover,
+                        ),
+                        borderRadius: BorderRadius.all(Radius.circular(50.0)),
+                        border: Border.all(
+                          color: primaryColor,
+                          width: 4.0,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 8),
+                      child: Text(
+                        "${snapshot.data['msg']}",
+                        style: TextStyle(fontSize: 16),
+                      ),
+                    ),
+                  ],
                 ),
-              ],
-            ),
-          );
-        }else {
-          return Center(
-              child: CircularProgressIndicator(backgroundColor: primaryColor));
-        }
-      },
+              );
+            } else {
+              return Center(
+                  child:
+                      CircularProgressIndicator(backgroundColor: primaryColor));
+            }
+          },
         ),
         ListTile(
           leading: Icon(Icons.edit),
@@ -79,7 +80,10 @@ Widget appDrawer(Future userDetail, BuildContext context){
         ListTile(
           onTap: () async {
             await logOut();
-            Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>Splashscreen()), (route) => false);
+            Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(builder: (context) => Splashscreen()),
+                (route) => false);
           },
           leading: Icon(Icons.logout),
           title: Text("Logout"),
@@ -90,4 +94,3 @@ Widget appDrawer(Future userDetail, BuildContext context){
     ),
   );
 }
-

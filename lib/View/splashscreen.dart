@@ -10,10 +10,10 @@ class Splashscreen extends StatefulWidget {
   _SplashscreenState createState() => _SplashscreenState();
 }
 
-class _SplashscreenState extends State<Splashscreen>{
+class _SplashscreenState extends State<Splashscreen> {
   var token;
   @override
- initState(){
+  initState() {
     super.initState();
     navigateHelper();
   }
@@ -27,17 +27,16 @@ class _SplashscreenState extends State<Splashscreen>{
   Widget build(BuildContext context) {
     return SplashScreen(
       title: Text(
-            'Super Store',
-            style: new TextStyle(fontWeight: FontWeight.bold,
-                fontSize: 30.0, color: Colors.white),
-          ),
+        'Super Store',
+        style: new TextStyle(
+            fontWeight: FontWeight.bold, fontSize: 30.0, color: Colors.white),
+      ),
       seconds: 3,
-      navigateAfterSeconds: token!=null?Dashboard():SignUp(),
+      navigateAfterSeconds: token != null ? Dashboard() : SignUp(),
       gradientBackground: LinearGradient(
           begin: Alignment.topRight,
           end: Alignment.bottomLeft,
-          colors: [secondaryColor, primaryColor]
-      ),
+          colors: [secondaryColor, primaryColor]),
       styleTextUnderTheLoader: new TextStyle(),
       loaderColor: Colors.white,
     );

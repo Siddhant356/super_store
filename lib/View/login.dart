@@ -13,7 +13,6 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-
   final GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
   TextEditingController _email = new TextEditingController();
   TextEditingController _pass = new TextEditingController();
@@ -31,9 +30,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return null;
   }
 
-
   Future<void> submit(BuildContext context) async {
-
     if (this._formKey.currentState.validate()) {
       _formKey.currentState.save();
       setState(() {
@@ -62,7 +59,10 @@ class _LoginScreenState extends State<LoginScreen> {
           content: Text(res['msg']),
         ));
       } else {
-        Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => Dashboard()), (route) => false);
+        Navigator.pushAndRemoveUntil(
+            context,
+            MaterialPageRoute(builder: (context) => Dashboard()),
+            (route) => false);
         setToken(res['token']);
       }
     }
@@ -151,7 +151,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 hintText: 'Password',
                               )),
                           Builder(
-                            builder:(context)=> Container(
+                            builder: (context) => Container(
                               margin: EdgeInsets.symmetric(vertical: 30),
                               height: 50,
                               child: RaisedButton.icon(
@@ -159,28 +159,31 @@ class _LoginScreenState extends State<LoginScreen> {
                                   borderRadius: BorderRadius.circular(30.0),
                                 ),
                                 onPressed: () {
-                                  if(!_isloading)
-                                    submit(context);
+                                  if (!_isloading) submit(context);
                                 },
-                                icon:Icon(
+                                icon: Icon(
                                   Icons.login,
                                   color: secondaryColor,
                                 ),
-                                label: _isloading?CircularProgressIndicator():Text(
-                                  "Login",
-                                  style: TextStyle(
-                                      color: secondaryColor,
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold),
-                                ),
+                                label: _isloading
+                                    ? CircularProgressIndicator()
+                                    : Text(
+                                        "Login",
+                                        style: TextStyle(
+                                            color: secondaryColor,
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.bold),
+                                      ),
                                 color: primaryColor,
                               ),
                             ),
                           ),
                           FlatButton(
-                            onPressed: (){
+                            onPressed: () {
                               Navigator.push(
-                                  context, MaterialPageRoute(builder: (context) => SignUp()));
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => SignUp()));
                             },
                             child: Text("Don't have account? Signup"),
                             textColor: secondaryColor,
@@ -189,7 +192,6 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                   ),
-
                 ],
               ),
             ),

@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:http/http.dart';
 import 'package:super_store/Methods/sharedPrefrences.dart';
 
-class GetUser{
+class GetUser {
   final String url;
   GetUser(this.url);
   fetchUserDetails() async {
@@ -12,7 +12,7 @@ class GetUser{
       'Content-Type': 'application/json; charset=UTF-8',
       'Authorization': 'Bearer $token'
     });
-    if(response.statusCode == 200){
+    if (response.statusCode == 200) {
       var res = json.decode(response.body);
       return res;
     } else {

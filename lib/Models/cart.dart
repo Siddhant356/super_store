@@ -1,4 +1,3 @@
-
 import 'dart:convert';
 
 import 'package:flutter/cupertino.dart';
@@ -7,26 +6,28 @@ import 'package:super_store/Methods/sharedPrefrences.dart';
 import 'sample.dart';
 
 class Cart extends ChangeNotifier {
-  List _products=[];
-  Cart(){
+  List _products = [];
+  Cart() {
     _init();
   }
   _init() async {
     print(_products);
   }
-  List get cartItems{
+
+  List get cartItems {
     return _products;
   }
+
   dynamic _totalPrice = 0.0;
 
-  void add(Sample item){
+  void add(Sample item) {
     _products.add(item);
     _totalPrice += item.price;
     notifyListeners();
   }
 
-  void remove(Sample item){
-    _totalPrice -=item.price;
+  void remove(Sample item) {
+    _totalPrice -= item.price;
     _products.remove(item);
     notifyListeners();
   }
@@ -39,4 +40,3 @@ class Cart extends ChangeNotifier {
     return _totalPrice;
   }
 }
-
