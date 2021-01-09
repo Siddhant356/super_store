@@ -7,7 +7,7 @@ import 'package:super_store/Methods/sharedPrefrences.dart';
 import 'sample.dart';
 
 class Cart extends ChangeNotifier {
-  List _products;
+  List _products=[];
   Cart(){
     _init();
   }
