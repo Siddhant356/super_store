@@ -1,6 +1,13 @@
 # super_store
 
-A new Flutter application.
+The goal of this project is to give your users the capability of looking at a list of products, select products from the list and add them to a shopping cart, place orders for the products listed in the shopping cart. 
+
+# Dependencies Used
+  [http: ^0.12.2](https://pub.dev/packages/http)
+  [provider: ^4.3.2+3](https://pub.dev/packages/provider)
+  [splashscreen: ^1.3.5](https://pub.dev/packages/splashscreen)
+  [shared_preferences: ^0.5.12+4](https://pub.dev/packages/shared_preferences)
+  [validate: ^1.7.0](https://pub.dev/packages/validate)
 
 ## Getting Started
 
