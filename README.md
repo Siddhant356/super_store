@@ -4,9 +4,13 @@ The goal of this project is to give your users the capability of looking at a li
 
 # Dependencies Used
   [http: ^0.12.2](https://pub.dev/packages/http)
+  
   [provider: ^4.3.2+3](https://pub.dev/packages/provider)
+  
   [splashscreen: ^1.3.5](https://pub.dev/packages/splashscreen)
+  
   [shared_preferences: ^0.5.12+4](https://pub.dev/packages/shared_preferences)
+  
   [validate: ^1.7.0](https://pub.dev/packages/validate)
 
 ## Getting Started
