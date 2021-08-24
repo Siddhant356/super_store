@@ -1,4 +1,5 @@
 # super_store
+[![Dart](https://github.com/Siddhant356/super_store/actions/workflows/dart.yml/badge.svg)](https://github.com/Siddhant356/super_store/actions/workflows/dart.yml)
 
 The goal of this project is to give your users the capability of looking at a list of products, select products from the list and add them to a shopping cart, place orders for the products listed in the shopping cart. 
 
